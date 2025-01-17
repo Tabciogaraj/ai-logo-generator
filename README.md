@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+AI Logo Generator 🎨🤖
+
+AI Logo Generator to aplikacja, która umożliwia generowanie logo przy użyciu sztucznej inteligencji. Dzięki predefiniowanym kategoriom, użytkownicy mogą szybko tworzyć unikalne logo, dopasowane do swoich potrzeb, takie jak minimalistyczne, luksusowe, vintage, czy rysunkowe style.
 
 ## Getting Started
 
