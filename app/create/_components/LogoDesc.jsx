@@ -2,7 +2,8 @@ import React from "react";
 import HeadingDescription from "./HeadingDescription";
 import Lookup from "../../_data/Lookup";
 
-function LogoDesc({ onHandleInputChange })  {
+function LogoDesc({ onHandleInputChange, formData = {} }) { 
+  const inputValue = formData?.desc ?? '';
   return (
     <div className="my-10">
       <HeadingDescription
@@ -14,6 +15,7 @@ function LogoDesc({ onHandleInputChange })  {
         type="text"
         placeholder={Lookup.InputTitlePlaceholder}
         className="p-4 border rounded-lg mt-5 w-full"
+        value={formData.desc}
         onChange={(e)=>onHandleInputChange(e.target.value)}
       />
     </div>

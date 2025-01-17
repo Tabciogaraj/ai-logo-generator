@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LogoTitle from './_components/LogoTitle'
 import LogoDesc from './_components/LogoDesc'
 import LogoPalette from './_components/LogoPallette'
@@ -9,29 +9,42 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 function CreateLogo() {
-  const [step,setStep]=useState(1);
-  const [formData,setFormData]=useState();
-  const onHandleInputChange=(field,value)=>{
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    title: '', 
+    desc: '',
+    palette: '',
+    design: null,
+    idea: ''
+  });
 
-      setFormData(prev=>({
-        ...prev,
-        [field]:value
-      }))
+  const onHandleInputChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+  
+  useEffect(() => {
+    console.log('FormData changed:', formData);
+  }, [formData]);
 
-      console.log(formData)
-  }
   return (
     <div className='mt-28 p-10 border rounded-xl 2xl:mx-72'>
       {step==1?
-        <LogoTitle onHandleInputChange={(v)=>onHandleInputChange('title',v)}/> :
+        <LogoTitle onHandleInputChange={(v)=>onHandleInputChange('title',v)}
+        formData={formData} /> :
         step==2?
-        <LogoDesc onHandleInputChange={(v)=>onHandleInputChange('desc',v)}/>:
+        <LogoDesc onHandleInputChange={(v)=>onHandleInputChange('desc',v)}
+        formData={formData} />:
         step==3?
-        <LogoPalette onHandleInputChange={(v)=>onHandleInputChange('palette',v)}/>:
+        <LogoPalette onHandleInputChange={(v)=>onHandleInputChange('palette',v)}
+        formData={formData} />:
         step==4?
-        <LogoDesigns onHandleInputChange={(v)=>onHandleInputChange('design',v)}/>:
+        <LogoDesigns onHandleInputChange={(v)=>onHandleInputChange('design',v)}
+        formData={formData} />:
         step==5?
-        <LogoIdea onHandleInputChange={(v)=>onHandleInputChange('idea',v)}/>:
+        <LogoIdea formData={formData} onHandleInputChange={(v)=>onHandleInputChange('idea',v)}/>:
         null 
   }
         <div className='flex items-center justify-between mt-10'>
