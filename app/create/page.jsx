@@ -5,8 +5,10 @@ import LogoDesc from './_components/LogoDesc'
 import LogoPalette from './_components/LogoPallette'
 import LogoDesigns from './_components/LogoDesigns'
 import LogoIdea from './_components/LogoIdea'
-import { Button } from '@/components/ui/button'
+import PricingModel from './_components/PricingModel'
+
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 function CreateLogo() {
   const [step, setStep] = useState(1);
@@ -45,13 +47,34 @@ function CreateLogo() {
         formData={formData} />:
         step==5?
         <LogoIdea formData={formData} onHandleInputChange={(v)=>onHandleInputChange('idea',v)}/>:
+        step==6?
+        <PricingModel formData={formData} onHandleInputChange={(v)=>onHandleInputChange('pricing',v)}/>:
         null 
   }
         <div className='flex items-center justify-between mt-10'>
-          {step!=1&& <Button variant="outline" onClick={()=>setStep(step-1)}> <ArrowLeft/> Poprzedni krok</Button>}
-          <Button onClick={()=>setStep(step+1)}>  Następny krok <ArrowRight/></Button>
-
-        </div>
+  {step != 1 && (
+    <Link 
+      href="#" 
+      onClick={(e) => {
+        e.preventDefault();
+        setStep(step-1);
+      }}
+      className='flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-gray-50'
+    >
+      <ArrowLeft /> Poprzedni krok
+    </Link>
+  )}
+  <Link 
+    href="#" 
+    onClick={(e) => {
+      e.preventDefault();
+      setStep(step+1);
+    }}
+    className='flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary'
+  >
+    Następny krok <ArrowRight />
+  </Link>
+</div>
     </div>
   )
 }

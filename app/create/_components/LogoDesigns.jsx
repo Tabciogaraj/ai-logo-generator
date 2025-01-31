@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import HeadingDescription from './HeadingDescription'
 import Lookup from '../../_data/Lookup'
-import LogoDesign from '@/app/_data/LogoDesign'
+import LogoDesign from '../../_data/LogoDesign'
 import Image from 'next/image'
 
 function LogoDesigns({onHandleInputChange, formData}) {

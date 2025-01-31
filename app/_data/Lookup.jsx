@@ -23,11 +23,11 @@ export default{
             title: 'Bezpłatny',
             icon: '/free.png',
             features: [
-                '⚫ Generuj nieograniczoną liczbę logo za darmo',
+                '⚫ Generuj nieograniczoną ilość',
                 '⚫ Dłuższy czas oczekiwania',
-                '⚫ Czas oczekiwania: od 30 sekund do 3 minut',
-                '⚫ Ograniczone opcje projektowe i jakość',
-                '⚫ Wolno (niezalecane)'
+                '⚫ Czas: 30 sekund do 3 minut',
+                '⚫ Ograniczone opcje i jakość',
+                '⚫ Wolno'
             ],
             button: 'Generuj za darmo'
         },
@@ -35,12 +35,13 @@ export default{
             title: 'Premium',
             icon: '/thunder.png',
             features: [
-                '⚫ Generuj nieograniczoną liczbę logo',
+                '⚫ Generuj nieograniczoną ilość',
                 '⚫ Krótszy czas oczekiwania',
-                '⚫ Czas oczekiwania: mniej niż 10 sekund',
-                '⚫ Tylko 5 kredytów'
+                '⚫ Czas: mniej niż 10 sekund',
+                '⚫ Tylko 5 kredytów',
+                '⚫ Szybko'
             ],
-            button: 'Generuj z Premium'
+            button: 'Generuj z premium'
         }
     ],
 }

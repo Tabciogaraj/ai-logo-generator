@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import Lookup from '../_data/Lookup'
-import { Button } from '@/components/ui/button'
+
 import Link from 'next/link';
 
 
@@ -24,9 +24,9 @@ function Hero() {
             className='p-3 border rounded-md w-full shadow-md'
               onChange={(event)=>setLogoTitle(event?.target.value)}
             />
-            <Link href={'/create?title='+logoTitle}>
-              <Button className='p-6 shadow-md'>Rozpocznij</Button>
-            </Link>
+
+              <Link className='bg-primary p-3 rounded-lg shadow-md text-white hover:bg-pink-600' href={'/create?title='+logoTitle}>Rozpocznij</Link>
+            
             
         </div>
 
